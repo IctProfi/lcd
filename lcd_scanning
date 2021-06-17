@@ -1,0 +1,30 @@
+#include <Wire.h>
+// the setup function runs once when you press reset or power the board
+void setup() {
+ Serial.begin(9600);
+ Serial.println("I2C screen type is scanning...");
+ Wire.begin();
+ for(byte e=8; e<150;e++)
+ {
+  Wire.beginTransmission(e);
+  if(Wire.endTransmission()==0)
+  {
+    Serial.print("connection is found, type is : ");
+    Serial.print(e,DEC);
+    Serial.print("(0x");
+    Serial.print(e,HEX);
+    Serial.println(")");
+    
+    
+    }
+  
+  }
+  Serial.println("its completed. ");
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  
+             
+             // wait for a second
+}
