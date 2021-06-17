@@ -1,0 +1,32 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C screen(0x27,16,2);
+
+void setup() {
+  // put your setup code here, to run once:
+  screen.init();
+  screen.backlight();
+  screen.setCursor(0,0);
+  screen.print("Hello World");
+  delay(2000);
+  screen.clear();
+  screen.setCursor(0,1);
+  screen.print("Hello People");
+  delay(2000);
+  screen.clear();
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  screen.setCursor(6,0);
+  screen.print("ICT");
+  delay(2000);
+  screen.clear();
+    screen.setCursor(5,1);
+  screen.print("PROFI");
+  delay(2000);
+  screen.clear();
+  
+
+}
